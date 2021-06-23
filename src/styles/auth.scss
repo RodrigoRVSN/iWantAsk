@@ -7,8 +7,8 @@
   aside {
     flex: 7;
 
-    background: #835afd;
-    color: #fff;
+    background-image: linear-gradient(to right, #74c69d, #40916c);
+    color: #081c15;
 
     display: flex;
     flex-direction: column;
@@ -26,10 +26,10 @@
     }
 
     p {
-      font-size: 24px;
+      font-size: 1.4rem;
       line-height: 18px;
       margin-top: 1rem;
-      color: #f8f8f8;
+      color: #081c15;
     }
   }
 
@@ -39,6 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(to right, #1b4332, #081c15);
   }
 
   @media (max-width: 730px) {
@@ -65,6 +66,7 @@
     font-size: 1.5rem;
     margin: 4rem 0 1.5rem;
     font-family: "Poppins", sans-serif;
+    color: #40916c;
   }
 
   form {
@@ -72,8 +74,8 @@
       height: 50px;
       border-radius: 8px;
       padding: 0 1rem;
-      background: #fff;
-      border: 1px solid #a8a8b3;
+      background: #b7e4c7;
+      border: 1px solid #ff6b6b;
     }
 
     button {
@@ -88,10 +90,24 @@
 
   p {
     font-size: 14px;
-    color: #737380;
+    color: #40916c;
     margin-top: 1rem;
     a {
-      color: #e559f9;
+      color: #ff6b6b;
+      text-decoration: none;
+      :hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  .reponsive-title {
+    font-size: 1.2rem;
+    line-height: 18px;
+    margin-top: 3rem;
+    display: none;
+    @media (max-width: 730px) {
+      display: block;
     }
   }
 
@@ -114,13 +130,13 @@
     }
 
     &:hover {
-      filter: brightness(0.9);
+      filter: brightness(0.8);
     }
   }
 
   .separator {
     font-size: 14px;
-    color: #a8a8b3;
+    color: #d8f3dc;
     margin: 2rem 0;
     display: flex;
     align-items: center;
@@ -129,7 +145,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: #d8f3dc;
       margin-right: 1rem;
     }
 
@@ -137,19 +153,8 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: #d8f3dc;
       margin-left: 1rem;
     }
-  }
-}
-
-.reponsive-title {
-  font-size: 1rem;
-  line-height: 18px;
-  margin-top: 1rem;
-  color: #835afd;
-  display: none;
-  @media (max-width: 730px) {
-    display: block;
   }
 }
