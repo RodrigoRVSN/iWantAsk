@@ -1,14 +1,38 @@
-*{
+:root {
+  --black: #081c15;
+  --dark-green: #1b4332;
+  --medium-green: #40916c;
+  --light-green: #b7e4c7;
+  --light-red: #ff6b6b;
+  --red: #ea4335;
+  --white: #fff;
+  --gray: #737380;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background: #f8f8f8;
   color: #29292e;
 }
 
-body, input, button, textarea{
-  font: 400 16px 'Roboto', sans-serif;
+body,
+input,
+button,
+textarea {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  background: var(--dark-green);
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-green);
+  border-radius: 1rem;
 }

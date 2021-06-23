@@ -7,8 +7,8 @@
   aside {
     flex: 7;
 
-    background-image: linear-gradient(to right, #74c69d, #40916c);
-    color: #081c15;
+    background-image: linear-gradient(to right, var(--light-green), var(--medium-green));
+    color: var(--black);
 
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
       font-size: 1.4rem;
       line-height: 18px;
       margin-top: 1rem;
-      color: #081c15;
+      color: var(--black);
     }
   }
 
@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to right, #1b4332, #081c15);
+    background-image: linear-gradient(to right, var(--dark-green), var(--black));
   }
 
   @media (max-width: 730px) {
@@ -66,7 +66,7 @@
     font-size: 1.5rem;
     margin: 4rem 0 1.5rem;
     font-family: "Poppins", sans-serif;
-    color: #40916c;
+    color: var(--medium-green);
   }
 
   form {
@@ -74,8 +74,8 @@
       height: 50px;
       border-radius: 8px;
       padding: 0 1rem;
-      background: #b7e4c7;
-      border: 1px solid #ff6b6b;
+      background: var(--light-green);
+      border: 1px solid var(--light-red);
     }
 
     button {
@@ -90,10 +90,10 @@
 
   p {
     font-size: 14px;
-    color: #40916c;
+    color: var(--medium-green);
     margin-top: 1rem;
     a {
-      color: #ff6b6b;
+      color: var(--light-red);
       text-decoration: none;
       :hover {
         filter: brightness(0.9);
@@ -116,8 +116,8 @@
     height: 50px;
     border-radius: 0.5rem;
     font-weight: 500;
-    background-color: #ea4335;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +136,7 @@
 
   .separator {
     font-size: 14px;
-    color: #d8f3dc;
+    color: var(--light-green);
     margin: 2rem 0;
     display: flex;
     align-items: center;
@@ -145,7 +145,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #d8f3dc;
+      background: var(--light-green);
       margin-right: 1rem;
     }
 
@@ -153,7 +153,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #d8f3dc;
+      background: var(--light-green);
       margin-left: 1rem;
     }
   }
