@@ -7,7 +7,11 @@
   aside {
     flex: 7;
 
-    background-image: linear-gradient(to right, var(--light-green), var(--medium-green));
+    background-image: linear-gradient(
+      to right,
+      var(--light-green),
+      var(--medium-green)
+    );
     color: var(--black);
 
     display: flex;
@@ -39,7 +43,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to right, var(--dark-green), var(--black));
+    background-image: linear-gradient(
+      to right,
+      var(--dark-green),
+      var(--black)
+    );
   }
 
   @media (max-width: 730px) {
@@ -62,9 +70,25 @@
     align-self: center;
   }
 
+  .user-info {
+    background: var(--dark-green);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10%;
+    box-shadow: 0 5px 10px var(--black);
+    img {
+      border-radius: 50%;
+      border: 1px solid var(--red);
+    }
+    h3 {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+    }
+  }
+
   h2 {
     font-size: 1.5rem;
-    margin: 4rem 0 1.5rem;
+    margin: 3rem 0 1.5rem;
     font-family: "Poppins", sans-serif;
     color: var(--medium-green);
   }
@@ -102,9 +126,10 @@
   }
 
   .reponsive-title {
-    font-size: 1.2rem;
-    line-height: 18px;
-    margin-top: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin: 1.4rem;
     display: none;
     @media (max-width: 730px) {
       display: block;

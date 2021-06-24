@@ -51,6 +51,10 @@ export function NewRoom() {
             <p className="reponsive-title">
               Tire as dúvidas de sua audiência em tempo real.
             </p>
+            <div className="user-info">
+              <img src={user?.avatar} alt={user?.name} />
+              <h3>{user?.name}</h3>
+            </div>
             <h2>Criar nova sala</h2>
             <form onSubmit={handleCreateRoom}>
               <input
