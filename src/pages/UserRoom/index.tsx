@@ -1,7 +1,10 @@
 import { useParams } from "react-router";
+
 import { Button } from "../../components/Button";
 import { RoomCode } from "../../components/RoomCode";
 import { Question } from "../../components/Question";
+import { Counter } from "../../components/Counter";
+
 import { FormEvent, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { toast } from "react-toastify";
@@ -10,6 +13,7 @@ import { useRoom } from "../../hooks/useRoom";
 
 import "./styles.scss";
 import logoImg from "../../assets/images/logo.svg";
+import { useCounter } from "../../hooks/useCounter";
 
 type RoomParams = {
   id: string;
@@ -22,6 +26,7 @@ export function UserRoom() {
   const [newQuestion, setNewQuestion] = useState("");
   const { user } = useAuth();
   const { title, questions } = useRoom(roomId);
+  const { timeOut, activeCount } = useCounter();
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -45,7 +50,9 @@ export function UserRoom() {
 
     await database.ref(`rooms/${roomId}/questions`).push(question);
     setNewQuestion("");
+
     toast.dark("Mensagem enviada!");
+    activeCount();
   }
 
   async function handleLikeQuestion(
@@ -82,6 +89,7 @@ export function UserRoom() {
           </div>
           <form onSubmit={handleSendQuestion}>
             <textarea
+              disabled={timeOut}
               placeholder="O que você deseja perguntar?"
               onChange={(event) => setNewQuestion(event.target.value)}
               value={newQuestion}
@@ -98,8 +106,8 @@ export function UserRoom() {
                 </span>
               )}
 
-              <Button type="submit" disabled={!user}>
-                Enviar pergunta
+              <Button type="submit" disabled={!user || timeOut}>
+                {timeOut ? <Counter /> : "Enviar pergunta"}
               </Button>
             </div>
           </form>

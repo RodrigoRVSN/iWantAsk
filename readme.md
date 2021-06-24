@@ -11,16 +11,27 @@ ________________________________________________________________________________
 - React Framework (TS)
 - Firebase auth
 - SCSS
+- Keyframe
+
 _________________________________________________________________________________________________________________________________________________________
 
 # O que aprendi 😎
 
-- Manusear o .env.local para "esconder" dados sigilosos.
+- Manusear o .env.local para "esconder" dados sigilosos;
 - Utilizar o sistema de autenticação do Firebase;
 - Manusear informações do Firebase como um banco de dados;
+- Usar animação com o Keyframe;
+- Botão que copia texto para o clipboard;
 - [...]
 
 ___________________________________________________________________________________________________________________________________________________________________
+
+# A milha extra...
+
+- Apliquei animação com Keyframe;
+- Modifiquei o layout com variáveis globais do SCSS;
+- Adicionei um bloqueio para que a mesma pessoa não possa perguntar por 10 segundos após ter feito a pergunta, com o uso de Hooks;
+- Modal para excluir perguntas ou encerrar a sala;
 
 # Gif
 

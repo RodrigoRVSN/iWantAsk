@@ -4,6 +4,10 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 1.5rem;
 
+  animation-name: newQuestion;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+
   & + .question {
     margin-top: 0.5rem;
   }

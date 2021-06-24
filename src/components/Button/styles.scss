@@ -21,7 +21,7 @@
   &.outlined {
     color: var(--black);
     background: var(--red);
-    border: 1px solid var(--light-gren);
+    border: 1px solid var(--light-green);
   }
 
   &:not(:disabled):hover {
@@ -29,6 +29,7 @@
   }
 
   &:disabled {
+    color: var(--light-green);
     opacity: 0.6;
     cursor: not-allowed;
   }
