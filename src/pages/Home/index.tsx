@@ -1,14 +1,14 @@
 import { useHistory } from "react-router";
 
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
-import googleIconImg from "../assets/images/google-icon.svg";
+import illustrationImg from "../../assets/images/illustration.svg";
+import logoImg from "../../assets/images/logo.svg";
+import googleIconImg from "../../assets/images/google-icon.svg";
 
-import "../styles/auth.scss";
-import { Button } from "../components/Button";
-import { useAuth } from "../hooks/useAuth";
+import "../../styles/auth.scss";
+import { Button } from "../../components/Button";
+import { useAuth } from "../../hooks/useAuth";
 import { FormEvent, useState } from "react";
-import { database } from "../services/firebase";
+import { database } from "../../services/firebase";
 import { toast } from "react-toastify";
 
 export function Home() {
@@ -37,6 +37,14 @@ export function Home() {
       });
       return;
     }
+
+    if (roomRef.val().endedAt) {
+      toast.dark("⚠️ Esta sala foi encerrada.", {
+        autoClose: 3000,
+      });
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   }
 

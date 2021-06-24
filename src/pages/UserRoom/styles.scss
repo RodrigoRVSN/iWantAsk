@@ -1,7 +1,6 @@
 #page-room {
   background-color: var(--black);
   color: var(--light-green);
-  height: 100vh;
   .container {
     border-bottom: 2px solid var(--medium-green);
   }
@@ -98,6 +97,10 @@
           }
         }
       }
+    }
+
+    .questions-list {
+      margin-top: 2rem;
     }
   }
 }
