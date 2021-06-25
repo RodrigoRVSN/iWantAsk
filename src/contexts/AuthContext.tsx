@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { createContext, ReactNode, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { AuthContextType } from '../@types/AuthContextType'
 import { User } from '../@types/User'
 import { auth, firebase } from '../services/firebase'
@@ -14,6 +15,8 @@ export const AuthContext = createContext({} as AuthContextType)
 export function AuthContextProvider(
     props: AuthContextProviderProps
 ): JSX.Element {
+    const history = useHistory()
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
@@ -21,7 +24,7 @@ export function AuthContextProvider(
                 if (!displayName || !photoURL) {
                     throw new Error('Missing user information')
                 }
-                setuser({
+                setUser({
                     id: uid,
                     name: displayName,
                     avatar: photoURL
@@ -33,7 +36,7 @@ export function AuthContextProvider(
         }
     }, [])
 
-    const [user, setuser] = useState<User>()
+    const [user, setUser] = useState<User>()
 
     async function signInWithGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider()
@@ -45,7 +48,7 @@ export function AuthContextProvider(
             if (!displayName || !photoURL) {
                 throw new Error('Missing user information')
             }
-            setuser({
+            setUser({
                 id: uid,
                 name: displayName,
                 avatar: photoURL
@@ -53,8 +56,14 @@ export function AuthContextProvider(
         }
     }
 
+    async function signOut() {
+        await auth.signOut()
+        setUser(undefined)
+        history.push('/')
+    }
+
     return (
-        <AuthContext.Provider value={{ user, signInWithGoogle }}>
+        <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
             {props.children}
         </AuthContext.Provider>
     )

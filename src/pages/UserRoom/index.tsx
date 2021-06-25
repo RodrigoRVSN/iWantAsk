@@ -25,7 +25,7 @@ export function UserRoom(): JSX.Element {
     const roomId = params.id
 
     const [newQuestion, setNewQuestion] = useState('')
-    const { user, signInWithGoogle } = useAuth()
+    const { user, signInWithGoogle, signOut } = useAuth()
     const { title, questions } = useRoom(roomId)
     const { timeOut, activeCount } = useCounter()
 
@@ -86,6 +86,9 @@ export function UserRoom(): JSX.Element {
                         <img src={logoImg} alt="logo i want to ask" />
                         <div>
                             <RoomCode code={roomId} />
+                            <Button isOutlined onClick={signOut}>
+                                SAIR
+                            </Button>
                         </div>
                     </header>
                 </div>
