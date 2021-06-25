@@ -33,13 +33,14 @@
 # 🚀 A milha extra
 
 - Apliquei animação com Keyframe;
-- Modifiquei o layout com variáveis globais do SCSS;
 - Adicionei um bloqueio para que a mesma pessoa não possa perguntar por 10 segundos após ter feito a pergunta, com o uso de Hooks;
-- Modal para excluir perguntas ou encerrar a sala;
+- Mensagens personalizadas com toast
+- Modal para encerrar a sala;
 - Prettier, ESlint
 - Readme
-- [...] PWA
-- [...] Ligh Mode
+- PWA 
+- Dark / Light Mode de acordo com o tema do navegador do usuário
+- Refatorei o código
 - [...] Integração com outro banco dedados
 
 ---

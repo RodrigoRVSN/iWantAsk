@@ -2,13 +2,13 @@
   height: 2.5rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  background: var(--light-green);
-  border: 1px solid var(--light-green);
+  background: var(--light-primary);
+  border: 1px solid var(--light-primary);
   cursor: pointer;
   display: flex;
 
   div {
-    background-color: var(--dark-green);
+    background-color: var(--dark-primary);
     padding: 0 12px;
     display: flex;
     justify-content: center;

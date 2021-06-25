@@ -1,36 +1,36 @@
 .button {
-  height: 50px;
-  border-radius: 0.5rem;
-  font-weight: 800;
-  font-size: 1.3rem;
-  background-color: var(--medium-green);
-  color: var(--black);
-  padding: 0 2rem;
+    height: 50px;
+    border-radius: 0.5rem;
+    font-weight: 800;
+    font-size: 1.3rem;
+    background-color: var(--medium-primary);
+    color: var(--background);
+    padding: 0 2rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: 0;
-  transition: filter 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+    transition: filter 0.2s;
 
-  img {
-    margin-right: 0.5rem;
-  }
+    img {
+        margin-right: 0.5rem;
+    }
 
-  &.outlined {
-    color: var(--black);
-    background: var(--red);
-    border: 1px solid var(--light-green);
-  }
+    &.outlined {
+        color: var(--background);
+        background: var(--dark-secondary);
+        border: 1px solid var(--light-primary);
+    }
 
-  &:not(:disabled):hover {
-    filter: brightness(0.9);
-  }
+    &:not(:disabled):hover {
+        filter: brightness(0.9);
+    }
 
-  &:disabled {
-    color: var(--light-green);
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+    &:disabled {
+        color: var(--light-primary);
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
 }

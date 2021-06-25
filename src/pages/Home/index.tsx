@@ -31,6 +31,7 @@ export function Home(): JSX.Element {
         event.preventDefault()
 
         if (roomCode.trim() === '') {
+            toast.dark('⚠️ Preencha o campo.')
             return
         }
 

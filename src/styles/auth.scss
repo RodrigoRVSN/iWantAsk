@@ -12,8 +12,8 @@
     justify-content: center;
     background-image: linear-gradient(
       to right,
-      var(--dark-green),
-      var(--black)
+      var(--dark-primary),
+      var(--background)
     );
   }
 
@@ -38,14 +38,14 @@
   }
 
   .user-info {
-    background: var(--dark-green);
+    background: var(--dark-primary);
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 10%;
-    box-shadow: 0 5px 10px var(--black);
+    box-shadow: 0 5px 10px var(--background);
     img {
       border-radius: 50%;
-      border: 1px solid var(--red);
+      border: 1px solid var(--dark-secondary);
     }
     h3 {
       margin-top: 1rem;
@@ -57,7 +57,7 @@
     font-size: 1.5rem;
     margin: 3rem 0 1.5rem;
     font-family: "Poppins", sans-serif;
-    color: var(--medium-green);
+    color: var(--medium-primary);
   }
 
   form {
@@ -65,8 +65,9 @@
       height: 50px;
       border-radius: 8px;
       padding: 0 1rem;
-      background: var(--light-green);
-      border: 1px solid var(--light-red);
+      background: var(--background);
+      color: var(--light-primary);
+      border: 1px solid var(--medium-secondary);
     }
 
     button {
@@ -81,10 +82,10 @@
 
   p {
     font-size: 14px;
-    color: var(--medium-green);
+    color: var(--medium-primary);
     margin-top: 1rem;
     a {
-      color: var(--light-red);
+      color: var(--light-secondary);
       text-decoration: none;
       :hover {
         filter: brightness(0.9);
@@ -108,8 +109,8 @@
     height: 50px;
     border-radius: 0.5rem;
     font-weight: 500;
-    background-color: var(--red);
-    color: var(--white);
+    background-color: var(--dark-secondary);
+    color: var(--contrast);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +129,7 @@
 
   .separator {
     font-size: 14px;
-    color: var(--light-green);
+    color: var(--light-primary);
     margin: 2rem 0;
     display: flex;
     align-items: center;
@@ -137,7 +138,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: var(--light-green);
+      background: var(--light-primary);
       margin-right: 1rem;
     }
 
@@ -145,7 +146,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: var(--light-green);
+      background: var(--light-primary);
       margin-left: 1rem;
     }
   }

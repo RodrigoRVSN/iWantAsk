@@ -3,10 +3,10 @@ aside {
 
     background-image: linear-gradient(
       to right,
-      var(--light-green),
-      var(--medium-green)
+      var(--light-primary),
+      var(--medium-primary)
     );
-    color: var(--black);
+    color: var(--background);
 
     display: flex;
     flex-direction: column;
@@ -27,6 +27,6 @@ aside {
       font-size: 1.4rem;
       line-height: 18px;
       margin-top: 1rem;
-      color: var(--black);
+      color: var(--background);
     }
   }

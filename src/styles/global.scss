@@ -1,38 +1,58 @@
-:root {
-  --black: #081c15;
-  --dark-green: #1b4332;
-  --medium-green: #40916c;
-  --light-green: #b7e4c7;
-  --light-red: #ff6b6b;
-  --red: #ea4335;
-  --white: #fff;
-  --gray: #737380;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #081c15;
+        --dark-primary: #3d5a80;
+        --medium-primary: #2d6a4f;
+        --light-primary: #2a8059;
+        --light-secondary: #b7e4c7;
+        --dark-secondary: #aa362b;
+        --contrast: #fff;
+        --gray: #737380;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--light-primary);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #4ea8de;
+        --dark-primary: #904db8;
+        --medium-primary: #2b2d42;
+        --light-primary: #3639ca;
+        --light-secondary: #ff6b6b;
+        --dark-secondary: #ea4335;
+        --contrast: #081c15;
+        --gray: #737380;
+    }
+    body {
+        background-color: var(--background);
+        color: var(--light-primary);
+    }
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  color: var(--light-green);
-  background: var(--black);
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body,
 input,
 button,
 textarea {
-  font: 400 1rem "Roboto", sans-serif;
+    font: 400 1rem 'Roboto', sans-serif;
 }
 
 ::-webkit-scrollbar {
-  background: var(--dark-green);
-  width: 0.8rem;
+    background: var(--dark-primary);
+    width: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--light-green);
-  border-radius: 1rem;
+    background: var(--light-primary);
+    border-radius: 1rem;
 }

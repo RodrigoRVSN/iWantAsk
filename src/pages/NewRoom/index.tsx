@@ -10,6 +10,7 @@ import { database } from '../../services/firebase'
 
 import logoImg from '../../assets/images/logo.svg'
 import '../../styles/auth.scss'
+import { toast } from 'react-toastify'
 
 export function NewRoom(): JSX.Element {
     const { user } = useAuth()
@@ -21,6 +22,7 @@ export function NewRoom(): JSX.Element {
 
         // remove espaços em branco
         if (newRoom.trim() === '') {
+            toast.dark('⚠️ Preencha o campo!')
             return
         }
 

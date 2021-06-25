@@ -33,12 +33,14 @@ export function AdminRoom(): JSX.Element {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
             isAnswered: true
         })
+        toast.dark('✔️ Pergunta respondida!')
     }
 
     async function handleHighlightedQuestion(questionId: string) {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
             isHighlighted: true
         })
+        toast.dark('✔️ Link destacada!')
     }
 
     async function handleDeleteQuestion(questionId: string) {
@@ -47,6 +49,7 @@ export function AdminRoom(): JSX.Element {
                 .ref(`rooms/${roomId}/questions/${questionId}`)
                 .remove()
         }
+        toast.dark('✔️ Pergunta excluída!')
     }
 
     const history = useHistory()

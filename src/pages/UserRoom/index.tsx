@@ -32,6 +32,7 @@ export function UserRoom(): JSX.Element {
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault()
         if (newQuestion.trim() === '') {
+            toast.dark('⚠️ Preencha o campo!')
             return
         }
         if (!user) {

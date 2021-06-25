@@ -1,103 +1,103 @@
 .question {
-  background-color: var(--dark-green);
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  padding: 1.5rem;
+    background-color: var(--dark-primary);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 1.5rem;
 
-  animation-name: newQuestion;
-  animation-duration: 1.2s;
-  animation-fill-mode: forwards;
+    animation-name: newQuestion;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
 
-  img {
-    color: black;
-  }
-
-  & + .question {
-    margin-top: 0.5rem;
-  }
-
-  &.highlighted {
-    color: var(--dark-green);
-    background: var(--light-red);
-    border: 2px solid var(--red);
-    font-weight: 800;
-    font-size: 1.2rem;
-    .user-info > img,
-    span {
-      transform: scale(1.2);
-    }
-  }
-
-  &.answered {
-    background: var(--black);
-    color: var(--medium-green);
-    box-shadow: 0 2px 4px var(--dark-green);
-  }
-
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1.5rem;
-
-    .user-info {
-      display: flex;
-      align-items: center;
-      img {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-      }
-
-      span {
-        margin-left: 0.5rem;
-        font-weight: 500;
-        font-size: 0.875rem;
-      }
+    img {
+        color: var(--background);
     }
 
-    > div {
-      display: flex;
-      gap: 1rem;
+    & + .question {
+        margin-top: 0.5rem;
     }
 
-    > span {
-      font-size: 0.875rem;
-      color: var(--light-green);
-
-      button {
-        background: transparent;
-        border: 0;
-        color: var(--red);
-        font-size: 0.875rem;
-        font-weight: 500;
-        cursor: pointer;
-      }
-    }
-
-    button {
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      transition: filter 0.2s;
-
-      &.like-button {
-        display: flex;
-        align-items: flex-end;
-        gap: 0.5rem;
-        color: var(--light-green);
-        &.liked {
-          color: var(--light-red);
-          svg path {
-            stroke: var(--medium-green);
-            fill: var(--light-green);
-          }
+    &.highlighted {
+        color: var(--dark-primary);
+        background: var(--light-secondary);
+        border: 2px solid var(--dark-secondary);
+        font-weight: 800;
+        font-size: 1.2rem;
+        .user-info > img,
+        span {
+            transform: scale(1.2);
         }
-      }
-
-      &:hover {
-        filter: brightness(0.7);
-      }
     }
-  }
+
+    &.answered {
+        background: var(--background);
+        color: var(--medium-primary);
+        box-shadow: 0 2px 4px var(--dark-primary);
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            img {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+            }
+
+            span {
+                margin-left: 0.5rem;
+                font-weight: 500;
+                font-size: 0.875rem;
+            }
+        }
+
+        > div {
+            display: flex;
+            gap: 1rem;
+        }
+
+        > span {
+            font-size: 0.875rem;
+            color: var(--light-primary);
+
+            button {
+                background: transparent;
+                border: 0;
+                color: var(--dark-secondary);
+                font-size: 0.875rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            transition: filter 0.2s;
+
+            &.like-button {
+                display: flex;
+                align-items: flex-end;
+                gap: 0.5rem;
+                color: var(--light-primary);
+                &.liked {
+                    color: var(--light-secondary);
+                    svg path {
+                        stroke: var(--medium-primary);
+                        fill: var(--light-primary);
+                    }
+                }
+            }
+
+            &:hover {
+                filter: brightness(0.7);
+            }
+        }
+    }
 }

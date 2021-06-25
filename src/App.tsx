@@ -5,6 +5,7 @@ import { Home } from './pages/Home'
 import { NewRoom } from './pages/NewRoom'
 import { UserRoom } from './pages/UserRoom'
 import { AdminRoom } from './pages/AdminRoom'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 import { AuthContextProvider } from './contexts/AuthContext'
 
@@ -26,3 +27,5 @@ function App(): JSX.Element {
 }
 
 export default App
+
+serviceWorkerRegistration.register()
