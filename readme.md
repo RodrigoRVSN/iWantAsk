@@ -4,7 +4,8 @@
 
 # 💻 Projeto
 
-##### Neste projeto, é possível que o anfitrião crie uma sala para que sua audiência possa enviar perguntas, que serão votadas entre os usuários, o que destaca a pergunta mais solicitada. Foi utilizado o Firebase como banco de dados por conta da sua simplicidade e o React como framework Front-end.
+##### Neste projeto, é possível que o anfitrião crie uma sala para que sua audiência possa enviar perguntas, que serão votadas entre os usuários, o que destaca a pergunta mais solicitada. Foi utilizado o Firebase como banco de dados por conta da sua simplicidade e o React como framework Front-end. 
+Disponível em: https://iwantask-62521.web.app/
 
 ---
 
