@@ -65,9 +65,17 @@
       }
     }
 
+
+    
     .questions-list {
       margin-top: 2rem;
 
     }
+  }
+
+  #noQuestions{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 }

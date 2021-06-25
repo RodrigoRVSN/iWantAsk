@@ -149,7 +149,16 @@ export function AdminRoom() {
             </div>
           ) : (
             <>
-              <Button onClick={handleInvite}>Clique para copiar o link!</Button>
+              <div id="noQuestions">
+                <Button onClick={handleInvite}>
+                  Clique para copiar o link!
+                </Button>
+                <h2>
+                  Ao clicar no botão, o link será copiado e você pode
+                  compartilhar com outras pessoas, que irão enviar perguntas
+                  nessa sala.
+                </h2>
+              </div>
             </>
           )}
         </main>
