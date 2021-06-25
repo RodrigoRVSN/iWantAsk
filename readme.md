@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/75763403/123367138-d35aad80-d54f-11eb-8200-c0790a72b8c7.png)
+![image](https://user-images.githubusercontent.com/75763403/123483752-a228be80-d5dd-11eb-8eb3-20e5554e46c9.png)
 
 ---
 
@@ -43,7 +43,6 @@
 - PWA 
 - Dark / Light Mode de acordo com o tema do navegador do usuário
 - Refatorei o código
-- [...] Integração com outro banco dedados
 
 ---
 
@@ -69,10 +68,6 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________
 
 ![image](https://user-images.githubusercontent.com/75763403/123367529-77445900-d550-11eb-9a49-a6454f2586b8.png)
-
-____________________________________________________________________________________________________________________________________________________
-
-![image](https://user-images.githubusercontent.com/75763403/123367571-8b885600-d550-11eb-9b53-2ef74414ec80.png)
 
 ---
     
