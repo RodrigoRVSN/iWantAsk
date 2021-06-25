@@ -1,22 +1,23 @@
-import copyImg from "../../assets/images/copy.svg";
+/* eslint-disable react/react-in-jsx-scope */
+import copyImg from '../../assets/images/copy.svg'
 
-import "./styles.scss";
+import './styles.scss'
 
 type RoomCodeProps = {
-  code: string;
-};
+    code: string
+}
 
-export function RoomCode(props: RoomCodeProps) {
-  function copyRoomCodeToClipBoard() {
-    navigator.clipboard.writeText(props.code);
-  }
+export function RoomCode(props: RoomCodeProps): JSX.Element {
+    function copyRoomCodeToClipBoard(): void {
+        navigator.clipboard.writeText(props.code)
+    }
 
-  return (
-    <button className="room-code" onClick={copyRoomCodeToClipBoard}>
-      <div>
-        <img src={copyImg} alt="copy Img" />
-      </div>
-      <span>Sala #{props.code}</span>
-    </button>
-  );
+    return (
+        <button className="room-code" onClick={copyRoomCodeToClipBoard}>
+            <div>
+                <img src={copyImg} alt="copy Img" />
+            </div>
+            <span>Sala #{props.code}</span>
+        </button>
+    )
 }

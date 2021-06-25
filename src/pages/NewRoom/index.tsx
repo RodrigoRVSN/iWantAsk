@@ -1,70 +1,73 @@
-import { Link, useHistory } from "react-router-dom";
-import { FormEvent } from "react";
+import React, { FormEvent, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
-import { Button } from "../../components/Button";
-import { Aside } from "../../components/Aside/Index";
+import { Button } from '../../components/Button'
+import { Aside } from '../../components/Aside/Index'
 
-import { useAuth } from "../../hooks/useAuth";
-import { useState } from "react";
-import { database } from "../../services/firebase";
+import useAuth from '../../hooks/useAuth'
 
-import logoImg from "../../assets/images/logo.svg";
-import "../../styles/auth.scss";
+import { database } from '../../services/firebase'
 
-export function NewRoom() {
-  const { user } = useAuth();
-  const history = useHistory();
-  const [newRoom, setNewRoom] = useState("");
+import logoImg from '../../assets/images/logo.svg'
+import '../../styles/auth.scss'
 
-  async function handleCreateRoom(event: FormEvent) {
-    event.preventDefault();
+export function NewRoom(): JSX.Element {
+    const { user } = useAuth()
+    const history = useHistory()
+    const [newRoom, setNewRoom] = useState('')
 
-    //remove espaços em branco
-    if (newRoom.trim() === "") {
-      return;
+    async function handleCreateRoom(event: FormEvent) {
+        event.preventDefault()
+
+        // remove espaços em branco
+        if (newRoom.trim() === '') {
+            return
+        }
+
+        // captura a chave da sala, titulo e dono
+        const roomRef = database.ref('rooms')
+        const firebaseRoom = await roomRef.push({
+            title: newRoom,
+            authorId: user?.id
+        })
+
+        // direciona para a respectiva sala
+        history.push(`/admin/rooms/${firebaseRoom.key}`)
     }
 
-    //captura a chave da sala, titulo e dono
-    const roomRef = database.ref("rooms");
-    const firebaseRoom = await roomRef.push({
-      title: newRoom,
-      authorId: user?.id,
-    });
-
-    //direciona para a respectiva sala
-    history.push(`/admin/rooms/${firebaseRoom.key}`);
-  }
-
-  return (
-    <>
-      <div id="page-auth">
-        <Aside/>
-        <main>
-          <div className="main-content">
-            <img src={logoImg} alt="Logo do i want to ask" />
-            <p className="reponsive-title">
-              Tire as dúvidas de sua audiência em tempo real.
-            </p>
-            <div className="user-info">
-              <img src={user?.avatar} alt={user?.name} />
-              <h3>{user?.name}</h3>
+    return (
+        <>
+            <div id="page-auth">
+                <Aside />
+                <main>
+                    <div className="main-content">
+                        <img src={logoImg} alt="Logo do i want to ask" />
+                        <p className="reponsive-title">
+                            Tire as dúvidas de sua audiência em tempo real.
+                        </p>
+                        <div className="user-info">
+                            <img src={user?.avatar} alt={user?.name} />
+                            <h3>{user?.name}</h3>
+                        </div>
+                        <h2>Criar nova sala</h2>
+                        <form onSubmit={handleCreateRoom}>
+                            <input
+                                onChange={event =>
+                                    setNewRoom(event.target.value)
+                                }
+                                type="text"
+                                placeholder="Nome da sala"
+                                value={newRoom}
+                            />
+                            <Button type="submit">Criar sala</Button>
+                        </form>
+                        <p>
+                            Quer entrar em uma sala existente?{' '}
+                            <Link to="/">Clique aqui</Link>
+                        </p>
+                    </div>
+                </main>
             </div>
-            <h2>Criar nova sala</h2>
-            <form onSubmit={handleCreateRoom}>
-              <input
-                onChange={(event) => setNewRoom(event.target.value)}
-                type="text"
-                placeholder="Nome da sala"
-                value={newRoom}
-              />
-              <Button type="submit">Criar sala</Button>
-            </form>
-            <p>
-              Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
-            </p>
-          </div>
-        </main>
-      </div>
-    </>
-  );
+        </>
+    )
 }

@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+/* eslint-disable no-use-before-define */
+import React, { useEffect, useState } from 'react'
 
-export function Counter() {
-  const [timer, setTimer] = useState(10);
+export function Counter(): JSX.Element {
+    const [timer, setTimer] = useState(10)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer((timer) => timer - 1);
-    }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTimer(timer => timer - 1)
+        }, 1000)
+        return (): void => {
+            clearInterval(interval)
+        }
+    }, [])
 
-  return <>{timer < 10 ? `00:0${timer}` : `00:${timer}`}</>;
+    return <>{timer < 10 ? `00:0${timer}` : `00:${timer}`}</>
 }

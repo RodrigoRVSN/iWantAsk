@@ -1,20 +1,26 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
-export function useCounter() {
-  const [timeOut, setTimeOut] = useState<boolean>(false);
+type useCounterProps = {
+    timeOut: boolean
+    setTimeOut: Dispatch<SetStateAction<boolean>>
+    activeCount: () => void
+}
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeOut(false);
-    }, 10000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [timeOut]);
+export function useCounter(): useCounterProps {
+    const [timeOut, setTimeOut] = useState<boolean>(false)
 
-  function activeCount() {
-    setTimeOut(true);
-  }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTimeOut(false)
+        }, 10000)
+        return () => {
+            clearInterval(interval)
+        }
+    }, [timeOut])
 
-  return { timeOut, setTimeOut, activeCount };
+    function activeCount() {
+        setTimeOut(true)
+    }
+
+    return { timeOut, setTimeOut, activeCount }
 }

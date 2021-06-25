@@ -15,13 +15,14 @@
 # O que aprendi 😎
 
 - Fluxo de SPA
-- Manusear o .env.local para "esconder" dados sigilosos;
-- Utilizar o sistema de autenticação do Firebase;
-- Manusear informações do Firebase como um banco de dados;
-- Usar animação com o Keyframe;
-- Botão que copia texto para o clipboard;
-- Uso de hooks, contextos e autorização;
+- Manusear o .env.local para "esconder" dados sigilosos
+- Utilizar o sistema de autenticação do Firebase
+- Manusear informações do Firebase como um banco de dados
+- Usar animação com o Keyframe
+- Botão que copia texto para o clipboard
+- Uso de hooks, contextos e autorização
 - Hospedagem com firebase
+- Utilizar eslint para obter padrões de código
 
 ---
 
@@ -31,7 +32,7 @@
 - Modifiquei o layout com variáveis globais do SCSS;
 - Adicionei um bloqueio para que a mesma pessoa não possa perguntar por 10 segundos após ter feito a pergunta, com o uso de Hooks;
 - Modal para excluir perguntas ou encerrar a sala;
-- Prettier
+- Prettier, ESlint
 - [...] PWA
 - Readme
 
