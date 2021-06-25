@@ -39,7 +39,6 @@
 - Prettier, ESlint
 - Readme
 - [...] PWA
-- [...] Eslint
 - [...] Ligh Mode
 - [...] Integração com outro banco dedados
 
