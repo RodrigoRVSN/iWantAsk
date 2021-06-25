@@ -27,6 +27,8 @@
 - Uso de hooks, contextos e autorização
 - Hospedagem com firebase
 - Utilizar eslint para obter padrões de código
+- Como fazer uma PWA
+- Como fazer um darkmode de acordo com as configurações do usuário
 
 ---
 
