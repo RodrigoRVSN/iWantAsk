@@ -23,7 +23,7 @@ type RoomParams = {
     id: string
 }
 
-export function AdminRoom() {
+export function AdminRoom(): JSX.Element {
     const params = useParams<RoomParams>()
     const roomId = params.id
     const { title, questions } = useRoom(roomId)
