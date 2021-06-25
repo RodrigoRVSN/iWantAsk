@@ -24,7 +24,7 @@ export function UserRoom() {
   const roomId = params.id;
 
   const [newQuestion, setNewQuestion] = useState("");
-  const { user } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
   const { title, questions } = useRoom(roomId);
   const { timeOut, activeCount } = useCounter();
 
@@ -34,7 +34,7 @@ export function UserRoom() {
       return;
     }
     if (!user) {
-      toast.error("Você precisa estar logado");
+      toast.dark("⚠️ Você precisa estar logado!");
       throw new Error();
     }
 
@@ -53,6 +53,12 @@ export function UserRoom() {
 
     toast.dark("✔️ Mensagem enviada!");
     activeCount();
+  }
+
+  async function loginToAsk() {
+    if (!user) {
+      await signInWithGoogle();
+    }
   }
 
   async function handleLikeQuestion(
@@ -106,7 +112,8 @@ export function UserRoom() {
                 </div>
               ) : (
                 <span>
-                  Para enviar uma pergunta, <button>faça seu login</button>
+                  Para enviar uma pergunta,{" "}
+                  <button onClick={loginToAsk}>faça seu login</button>
                 </span>
               )}
 
