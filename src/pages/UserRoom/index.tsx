@@ -51,7 +51,7 @@ export function UserRoom() {
     await database.ref(`rooms/${roomId}/questions`).push(question);
     setNewQuestion("");
 
-    toast.dark("Mensagem enviada!");
+    toast.dark("✔️ Mensagem enviada!");
     activeCount();
   }
 

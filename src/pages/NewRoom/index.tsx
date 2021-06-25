@@ -32,7 +32,7 @@ export function NewRoom() {
     });
 
     //direciona para a respectiva sala
-    history.push(`/rooms/${firebaseRoom.key}`);
+    history.push(`/admin/rooms/${firebaseRoom.key}`);
   }
 
   return (

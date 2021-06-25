@@ -15,6 +15,8 @@ import { database } from "../../services/firebase";
 
 import Modal from "react-modal";
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 type RoomParams = {
   id: string;
@@ -42,6 +44,14 @@ export function AdminRoom() {
     if (window.confirm("Tem certeza que deseja excluir esta pergunta?")) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
+  }
+
+  const history = useHistory();
+  function handleInvite() {
+    navigator.clipboard.writeText(
+      `https://iwantask-62521.web.app${history.location.pathname.substr(6)}`
+    );
+    toast.dark("✔️ Link copiado!");
   }
 
   const customStyles = {
@@ -99,43 +109,49 @@ export function AdminRoom() {
             <h1>Sala {title}</h1>
             {questions.length > 0 && <span>{questions.length} perguntas</span>}
           </div>
-          <div className="questions-list">
-            {questions.map((question) => {
-              return (
-                <Question
-                  key={question.id}
-                  content={question.content}
-                  author={question.author}
-                  isAnswered={question.isAnswered}
-                  isHighlighted={question.isHighlighted}
-                >
-                  {!question.isAnswered && (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => handleAnsweredQuestion(question.id)}
-                      >
-                        <img src={checkImg} alt="Marcar como respondida" />
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => handleHighlightedQuestion(question.id)}
-                      >
-                        <img src={answerImg} alt="Dar destaque" />
-                      </button>
-                    </>
-                  )}
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteQuestion(question.id)}
+          {questions.length > 0 ? (
+            <div className="questions-list">
+              {questions.map((question) => {
+                return (
+                  <Question
+                    key={question.id}
+                    content={question.content}
+                    author={question.author}
+                    isAnswered={question.isAnswered}
+                    isHighlighted={question.isHighlighted}
                   >
-                    <img src={deleteImg} alt="Deletar pergunta" />
-                  </button>
-                </Question>
-              );
-            })}
-          </div>
+                    {!question.isAnswered && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => handleAnsweredQuestion(question.id)}
+                        >
+                          <img src={checkImg} alt="Marcar como respondida" />
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => handleHighlightedQuestion(question.id)}
+                        >
+                          <img src={answerImg} alt="Dar destaque" />
+                        </button>
+                      </>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteQuestion(question.id)}
+                    >
+                      <img src={deleteImg} alt="Deletar pergunta" />
+                    </button>
+                  </Question>
+                );
+              })}
+            </div>
+          ) : (
+            <>
+              <Button onClick={handleInvite}>Clique para copiar o link!</Button>
+            </>
+          )}
         </main>
       </div>
     </>
