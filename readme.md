@@ -1,10 +1,11 @@
-![image](https://user-images.githubusercontent.com/75763403/123367138-d35aad80-d54f-11eb-8200-c0790a72b8c7.png)
+![image](https://user-images.githubusercontent.com/75763403/123483752-a228be80-d5dd-11eb-8eb3-20e5554e46c9.png)
 
 ---
 
 # 💻 Projeto
 
-##### Neste projeto, é possível que o anfitrião crie uma sala para que sua audiência possa enviar perguntas, que serão votadas entre os usuários, o que destaca a pergunta mais solicitada. Foi utilizado o Firebase como banco de dados por conta da sua simplicidade e o React como framework Front-end.
+##### Neste projeto, é possível que o anfitrião crie uma sala para que sua audiência possa enviar perguntas, que serão votadas entre os usuários, o que destaca a pergunta mais solicitada. Foi utilizado o Firebase como banco de dados por conta da sua simplicidade e o React como framework Front-end. 
+Disponível em: https://iwantask-62521.web.app/
 
 ---
 
@@ -43,7 +44,6 @@
 - PWA 
 - Dark / Light Mode de acordo com o tema do navegador do usuário
 - Refatorei o código
-- [...] Integração com outro banco dedados
 
 ---
 
@@ -70,9 +70,10 @@ ________________________________________________________________________________
 
 ![image](https://user-images.githubusercontent.com/75763403/123367529-77445900-d550-11eb-9a49-a6454f2586b8.png)
 
-____________________________________________________________________________________________________________________________________________________
+---
+    
+![image](https://user-images.githubusercontent.com/75763403/123483575-4f4f0700-d5dd-11eb-8601-e80f88f36cd9.png)
 
-![image](https://user-images.githubusercontent.com/75763403/123367571-8b885600-d550-11eb-9b53-2ef74414ec80.png)
 </div>
 
 ---
