@@ -1,9 +1,17 @@
 #page-room {
   background-color: var(--black);
   color: var(--light-green);
+
   .container {
     border-bottom: 2px solid var(--medium-green);
+    #adminHeader {
+      display: flex;
+      @media (max-width: 575px) {
+        flex-direction: column;
+      }
+    }
   }
+
   header {
     max-width: 70rem;
     margin: 0 auto;
@@ -59,6 +67,7 @@
 
     .questions-list {
       margin-top: 2rem;
+
     }
   }
 }

@@ -1,10 +1,10 @@
 @keyframes newQuestion {
   from {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateX(100px);
   }
   to {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }

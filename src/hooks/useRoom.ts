@@ -22,7 +22,7 @@ export function useRoom(roomId: string) {
             content: value.content,
             author: value.author,
             isAnswered: value.isAnswered,
-            isHighlighted: value.isAnswered,
+            isHighlighted: value.isHighlighted,
             likeCount: Object.values(value.likes ?? {}).length,
             likeId: Object.entries(value.likes ?? {}).find(
               ([key, like]) => like.authorId === user?.id
@@ -30,8 +30,13 @@ export function useRoom(roomId: string) {
           };
         }
       );
+
+      const questinSorted = parsedQuestions.sort(
+        (a, b) => b.likeCount - a.likeCount
+      );
+
       setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
+      setQuestions(questinSorted);
 
       return () => {
         roomRef.off("value");

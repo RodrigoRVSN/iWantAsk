@@ -1,0 +1,23 @@
+.modalBox {
+  text-align: center;
+  background-color: var(--black);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  h2 {
+      font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--light-green);
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  button {
+    margin-top: 3rem;
+  }
+}

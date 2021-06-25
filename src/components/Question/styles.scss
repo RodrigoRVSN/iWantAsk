@@ -5,15 +5,33 @@
   padding: 1.5rem;
 
   animation-name: newQuestion;
-  animation-duration: 0.7s;
+  animation-duration: 1.2s;
   animation-fill-mode: forwards;
+
+  img {
+    color: black;
+  }
 
   & + .question {
     margin-top: 0.5rem;
   }
 
-  p {
-    color: var(--light-green);
+  &.highlighted {
+    color: var(--dark-green);
+    background: var(--light-red);
+    border: 2px solid var(--red);
+    font-weight: 800;
+    font-size: 1.2rem;
+    .user-info > img,
+    span {
+      transform: scale(1.2);
+    }
+  }
+
+  &.answered {
+    background: var(--black);
+    color: var(--medium-green);
+    box-shadow: 0 2px 4px var(--dark-green);
   }
 
   footer {
@@ -33,10 +51,14 @@
 
       span {
         margin-left: 0.5rem;
-        color: var(--light-green);
         font-weight: 500;
         font-size: 0.875rem;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 1rem;
     }
 
     > span {
